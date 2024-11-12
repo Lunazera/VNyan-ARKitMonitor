@@ -24,7 +24,7 @@
 
   <ItemGroup>
     <Folder Include="Release_Preparation\" />
-    <Folder Include="Releases\" />
+    <Folder Include="release_history\" />
   </ItemGroup>
 
 </Project>
