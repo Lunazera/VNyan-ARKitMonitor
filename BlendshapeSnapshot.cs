@@ -7,6 +7,10 @@ using Unity.Profiling;
 using System.Collections.Generic;
 using System.Text;
 
+// TODO:
+// - Add functionality for a pause tracking button
+// - Add threshold menu button
+
 namespace BlendshapeSnapshot
 {
     public class BlendshapeSnapshot : MonoBehaviour
@@ -19,10 +23,13 @@ namespace BlendshapeSnapshot
         public Text Blendshapes_Col4;
         public InputField Blendshapes_Selectable;
 
-        public float threshold = 40;
-
         Dictionary<string, float> CurrentBlendshapes;
 
+        public static float threshold = 30;
+        public static string parameterNameThreshold = "LZ_blendshape_threshold";
+
+        public static float pauseFlag = 0;
+        public static string parameterNamepauseFlag = "LZ_blendshape_pauseFlag";
 
         public void printBlendshapes(Dictionary<string, float> blendshapeList)
         {
@@ -70,7 +77,10 @@ namespace BlendshapeSnapshot
 
         void Update()
         {
-            CurrentBlendshapes = VNyanInterface.VNyanInterface.VNyanAvatar.getBlendshapesInstant();
+            if (pauseFlag == 1)
+            {
+                CurrentBlendshapes = VNyanInterface.VNyanInterface.VNyanAvatar.getBlendshapesInstant();
+            }
             printBlendshapes(CurrentBlendshapes);
             getLargeBlendshapes(CurrentBlendshapes, threshold);
         }
