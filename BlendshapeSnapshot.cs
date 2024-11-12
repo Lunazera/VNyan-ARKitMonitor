@@ -75,9 +75,17 @@ namespace BlendshapeSnapshot
             Blendshapes_Selectable.text = sb1.ToString();
         }
 
+        void onEnable()
+        {
+            CurrentBlendshapes = VNyanInterface.VNyanInterface.VNyanAvatar.getBlendshapesInstant();
+        }
+
         void Update()
         {
-            if (pauseFlag == 1)
+            threshold = VNyanInterface.VNyanInterface.VNyanParameter.getVNyanParameterFloat(parameterNameThreshold);
+            pauseFlag = VNyanInterface.VNyanInterface.VNyanParameter.getVNyanParameterFloat(parameterNamepauseFlag);
+
+            if (pauseFlag == 0)
             {
                 CurrentBlendshapes = VNyanInterface.VNyanInterface.VNyanAvatar.getBlendshapesInstant();
             }
