@@ -22,4 +22,9 @@
     </Reference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Release_Preparation\" />
+    <Folder Include="Releases\" />
+  </ItemGroup>
+
 </Project>
