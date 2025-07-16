@@ -1,5 +1,6 @@
 # LZ's ARKit Monitor tool for VNyan
 Small tool to help when working with ARKit blendshapes. 
+
 ![image of plugin window](https://github.com/Lunazera/VNyan-ARKitMonitor/blob/master/ARKitMonitorwindow.png)
 
 Displays all tracked 52 ARKit values in one window, and lets you pause to see the values at that time. You can set a threshold, and a selectable box at the bottom will list all blendshapes that were larger than that value. The list is formatted for use in other VNyan nodes (semi-colon separated list without spaces). 
