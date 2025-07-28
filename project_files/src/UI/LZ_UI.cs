@@ -22,7 +22,7 @@ namespace LZUI
         static IVNyanPluginManifest manifest = new ARKitMonitor.ARKitMonitorManifest();
 
 
-        public void Awake()
+        void Awake()
         {
             VNyanInterface.VNyanInterface.VNyanUI.registerPluginButton(pluginName(), (IButtonClickedHandler)this);
             this.window = (GameObject)VNyanInterface.VNyanInterface.VNyanUI.instantiateUIPrefab((object)this.windowPrefab);

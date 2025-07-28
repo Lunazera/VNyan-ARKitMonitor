@@ -17,7 +17,7 @@ namespace LZUI
         private Text mainText;
         private Text mainButtonText;
 
-        public void Awake()
+        void Start()
         {
             // We add the inputfield as the mainfield
             mainField = GetComponent(typeof(InputField)) as InputField;
@@ -27,6 +27,7 @@ namespace LZUI
             mainButtonText = mainButton.GetComponentInChildren<Text>();
 
             changeThemeSettings();
+            VNyanInterface.VNyanInterface.VNyanUI.colorThemeChanged += changeThemeSettings;
 
             // We add a listener that will run ButtonPressCheck if the button is pressed.
             mainButton.onClick.AddListener(delegate { ButtonPressCheck(); });

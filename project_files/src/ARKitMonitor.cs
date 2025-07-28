@@ -12,7 +12,7 @@ namespace ARKitMonitor
     class ARKitMonitorManifest : IVNyanPluginManifest
     {
         public string PluginName { get; } = "ARKit Monitor";
-        public string Version { get; } = "1.1";
+        public string Version { get; } = "1.2";
         public string Title { get; } = "ARKit Blendshape Monitor";
         public string Author { get; } = "lunazera";
         public string Website { get; } = "https://github.com/Lunazera/VNyan-Blendshape-Snapshot";

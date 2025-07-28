@@ -15,15 +15,16 @@ namespace LZUI
         public GameObject version;
         private RectTransform mainRect;
 
-        public void Awake()
+        void Start()
         {
             // Set Text
             Title.GetComponent<Text>().text = LZ_UI.pluginTitle();
             version.GetComponent<Text>().text = LZ_UI.pluginVersion() + " - " + LZ_UI.pluginAuthor();
-            changeThemeSettings();
-
-            // To transform the window we need to get the transform component of the type RectTransform!
+            
             mainRect = GetComponent(typeof(RectTransform)) as RectTransform;
+
+            changeThemeSettings();
+            VNyanInterface.VNyanInterface.VNyanUI.colorThemeChanged += changeThemeSettings;
         }
         public void changeThemeSettings()
         {

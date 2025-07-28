@@ -23,9 +23,10 @@ namespace LZUI
         private List<StringBuilder> listBlendshapes = new List<StringBuilder>();
         private StringBuilder stringlargeBlendshapes = new StringBuilder();
 
-        void Awake()
+        void Start()
         {
             changeThemeSettings();
+            VNyanInterface.VNyanInterface.VNyanUI.colorThemeChanged += changeThemeSettings;
         }
 
         void Update()

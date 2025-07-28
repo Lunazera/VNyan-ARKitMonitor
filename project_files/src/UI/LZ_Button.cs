@@ -13,7 +13,7 @@ namespace LZUI
         private float buttonState;
         public string buttonName;
 
-        public void Start()
+        void Start()
         {
             mainButton = GetComponent(typeof(Button)) as Button;
             mainButton.onClick.AddListener(delegate { ButtonPressCheck(); });
@@ -68,5 +68,6 @@ namespace LZUI
             }
             
         }
+
     }
 }
